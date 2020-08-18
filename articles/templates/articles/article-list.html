@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'articles/css/article-list.css' %}">
+<link rel="stylesheet" href="{% static 'css/pagination.css' %}">
+{% endblock %}
+{% block title %}Articles{% endblock title %}
+
+{% block content %}
+<h1>Articles</h1>
+<section id="articles">
+    {% for article in page_obj %}
+    <a href="{% url 'articles:article-detail' article.slug %}">
+        <div class="article">
+            <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}'s thumbnail">
+            <p class="title">{{ article.title }}</p>
+            <p class="author">by {{ article.author.username }}</p>
+            <p class="dates">Published: {{ article.publish_date|date }}<br>Last updated:
+                {{ article.last_updated|date }}
+            </p>
+        </div>
+    </a>
+    {% endfor %}
+</section>
+{% include 'pagination.html' with lists=page_obj %}
+{% endblock content %}
