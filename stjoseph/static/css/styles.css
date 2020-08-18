@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-size: 16px;
+    font-size: clamp(1rem, 1.5vw, 5rem);
+}
+
+body {
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+a,
+a:visited,
+a:hover {
+    color: #14c54f;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 10vw;
+}
