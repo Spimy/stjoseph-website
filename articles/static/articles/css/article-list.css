@@ -20,6 +20,11 @@
     margin-top: 0;
     margin-bottom: 1em;
     position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: auto;
+    height: 1.5em;
 }
 
 .title::after {
@@ -30,7 +35,6 @@
     height: 100%;
     width: 50%;
     border-bottom: 0.125em solid green;
-    margin-top: 0.25em;
 }
 
 .article img {
