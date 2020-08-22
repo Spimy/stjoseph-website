@@ -16,8 +16,9 @@
             <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}'s thumbnail">
             <p class="title">{{ article.title }}</p>
             <p class="author">by {{ article.author.username }}</p>
-            <p class="dates">Published: {{ article.publish_date|date }}<br>Last updated:
-                {{ article.last_updated|date }}
+            <p class="dates">
+                Published: {{ article.publish_date }}<br>
+                Last updated: {{ article.last_updated }}
             </p>
         </div>
     </a>
