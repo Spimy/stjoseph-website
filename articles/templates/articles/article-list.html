@@ -13,7 +13,7 @@
     {% if page_obj.paginator.count > 0 %}
     {% for article in page_obj %}
     <div class="article">
-        <h2 class="title">{{ article.title }}</h2>
+        <abbr title="{{ article.title }}" class="title">{{ article.title }}</abbr>
         <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}'s thumbnail">
         <p class="brief-description">{{ article.description|striptags|truncatechars:55 }}</p>
         <p class="author">— by {{ article.author.username }}</p>
