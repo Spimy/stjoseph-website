@@ -35,6 +35,26 @@ a:hover {
     padding: 0.5em 1em;
 }
 
+.btn::after {
+    content: "»";
+    margin-left: 0;
+    max-width: 0;
+    transition: 0.3s ease-in-out;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.btn:hover::after,
+.btn:focus::after {
+    opacity: 1;
+    margin-left: 5px;
+    max-width: 7rem;
+}
+
+
 .btn.primary {
     border: 0.2em solid green;
 }
