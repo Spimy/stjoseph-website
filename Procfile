@@ -1,1 +1,1 @@
-web: gunicorn Spuiz.wsgi
+web: gunicorn stjoseph.wsgi
