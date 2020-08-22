@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'main/base.html' %}
 {% load static %}
 
 {% block styles %}
 <link rel="stylesheet" href="{% static 'articles/css/article-list.css' %}">
-<link rel="stylesheet" href="{% static 'css/pagination.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/pagination.css' %}">
 {% endblock %}
 {% block title %}Articles{% endblock title %}
 
@@ -23,5 +23,5 @@
     </a>
     {% endfor %}
 </section>
-{% include 'pagination.html' with lists=page_obj %}
+{% include 'main/pagination.html' with lists=page_obj %}
 {% endblock content %}
