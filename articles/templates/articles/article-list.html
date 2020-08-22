@@ -14,7 +14,7 @@
     <div class="article">
         <h2 class="title">{{ article.title }}</h2>
         <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}'s thumbnail">
-        <p class="brief-description">{{ article.description|truncatewords:8 }}</p>
+        <p class="brief-description">{{ article.description|striptags|truncatechars:55 }}</p>
         <p class="author">— by {{ article.author.username }}</p>
         <a class="btn primary read-more" href="{% url 'articles:article-detail' article.slug %}">Read more</a>
     </div>
