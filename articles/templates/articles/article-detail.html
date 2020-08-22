@@ -1,1 +1,30 @@
 {% extends 'main/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'articles/css/article-detail.css' %}">
+{% endblock %}
+{% block title %}{{ object.title }}{% endblock title %}
+
+{% block content %}
+<section id="article">
+    <img class="thumbnail" src="{{ object.thumbnail.url }}" alt="{{ object.title }}'s thumbnail">
+    <h1>{{ object.title }}</h1>
+    <div class="detail">
+        <a href=".">
+            <img class="author-avatar" src="{{ object.thumbnail.url }}" alt="placeholder">
+        </a>
+        <div class="text">
+            <a href="." class="author-name">{{ object.author.username }}</a>
+            <p class="dates">
+                Published: {{ object.publish_date }}
+                {% if object.publish_date != object.last_updated %}
+                <br>
+                Last Updated: {{ object.last_updated }}
+                {% endif %}
+            </p>
+        </div>
+    </div>
+    <p class="description">{{ object.description|safe|linebreaksbr }}</p>
+</section>
+{% endblock content %}

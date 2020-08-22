@@ -11,16 +11,13 @@
 <h1>Articles</h1>
 <section id="articles">
     {% for article in page_obj %}
-    <a href="{% url 'articles:article-detail' article.slug %}">
-        <div class="article">
-            <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}'s thumbnail">
-            <p class="title">{{ article.title }}</p>
-            <p class="author">by {{ article.author.username }}</p>
-            <p class="dates">Published: {{ article.publish_date|date }}<br>Last updated:
-                {{ article.last_updated|date }}
-            </p>
-        </div>
-    </a>
+    <div class="article">
+        <h2 class="title">{{ article.title }}</h2>
+        <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}'s thumbnail">
+        <p class="brief-description">{{ article.description|truncatewords:8 }}</p>
+        <p class="author">— by {{ article.author.username }}</p>
+        <a class="btn primary read-more" href="{% url 'articles:article-detail' article.slug %}">Read more</a>
+    </div>
     {% endfor %}
 </section>
 {% include 'main/pagination.html' with lists=page_obj %}
