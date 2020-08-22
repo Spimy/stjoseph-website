@@ -64,6 +64,6 @@ a,
 }
 
 .read-more {
-    text-align: center;
+    align-self: center;
     margin-top: 0.5em;
 }
