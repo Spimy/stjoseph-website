@@ -26,3 +26,19 @@ a:hover {
 .container {
     margin: 0 10vw;
 }
+
+.btn {
+    font-size: 0.75rem;
+    color: #272727 !important;
+    width: fit-content;
+    border: 0.2em solid #272727;
+    padding: 0.5em 1em;
+}
+
+.btn.primary {
+    border: 0.2em solid green;
+}
+
+.btn.secondary {
+    border: 0.2em solid yellow;
+}
