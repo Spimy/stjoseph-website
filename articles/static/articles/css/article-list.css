@@ -1,0 +1,48 @@
+#articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-content: space-around;
+    grid-gap: 25px 10px;
+}
+
+.article {
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #e0e0e0;
+    padding: 0.25rem;
+}
+
+.article img {
+    object-fit: cover;
+    object-position: center;
+    height: 125px;
+    border-radius: 0.25rem;
+}
+
+.title {
+    margin-top: 0.25rem;
+    margin-bottom: 0.025rem;
+}
+
+.author,
+.dates {
+    margin: 0.025rem;
+    color: #272727;
+}
+
+a,
+.author {
+    width: auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.author {
+    font-size: 0.75rem;
+}
+
+.dates {
+    font-size: .5rem;
+}
