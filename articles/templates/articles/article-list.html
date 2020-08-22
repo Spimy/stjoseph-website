@@ -10,6 +10,7 @@
 {% block content %}
 <h1>Articles</h1>
 <section id="articles">
+    {% if page_obj.paginator.count > 0 %}
     {% for article in page_obj %}
     <div class="article">
         <h2 class="title">{{ article.title }}</h2>
@@ -19,6 +20,9 @@
         <a class="btn primary read-more" href="{% url 'articles:article-detail' article.slug %}">Read more</a>
     </div>
     {% endfor %}
+    {% else %}
+    <h2>No result</h2>
+    {% endif %}
 </section>
 {% include 'main/pagination.html' with lists=page_obj %}
 {% endblock content %}
