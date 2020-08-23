@@ -56,9 +56,9 @@ a:hover {
 
 
 .btn.primary {
-    border: 0.2em solid green;
+    border: 0.2em solid yellow;
 }
 
 .btn.secondary {
-    border: 0.2em solid yellow;
+    border: 0.2em solid green;
 }
