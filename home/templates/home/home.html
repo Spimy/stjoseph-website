@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+{% endblock styles %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<section id="hero">
+    <div class="content">
+        <h1 class="title">St Joseph's College</h1>
+        <p class="subtitle">
+            Our resolve has always been to guide our students to their greatest potentials, whether it be
+            academic or non-academic. Our school offers a wide variety of after school activities and clubs for the
+            students
+            to join.
+        </p>
+        <a href="#" class="btn primary learn-more">Learn more</a>
+    </div>
+</section>
+{% endblock content %}
