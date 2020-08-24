@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'history/css/history.css' %}">
+{% endblock styles %}
+{% block title %}History{% endblock title %}
+
+{% block content %}
+<section id="histories">
+    {% for history in object_list %}
+    <div class="history">
+        <h2>{{ history.title }}</h2>
+        {{ history.description|linebreaks }}
+    </div>
+    {% endfor %}
+</section>
+{% endblock content %}
