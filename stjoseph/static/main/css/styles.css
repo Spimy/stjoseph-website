@@ -5,7 +5,7 @@
 }
 
 html {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-family: "Titillium Web", sans-serif;
     font-size: 16px;
     font-size: clamp(1rem, 1.5vw, 5rem);
     scroll-behavior: smooth;
@@ -54,7 +54,6 @@ a:hover {
     margin-left: 5px;
     max-width: 7rem;
 }
-
 
 .btn.primary {
     border: 0.2em solid yellow;
