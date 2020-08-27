@@ -9,18 +9,21 @@ class HistoryManager(models.Manager):
         queryset = self.get_queryset()
         not_nums_index = 0
 
-        for query in queryset:
-            if ord(query.title[0]) > 48 and ord(query.title[0]) < 57:
-                not_nums_index += 1
-
         try:
-            queryset.get(title__iexact='history')
+            for query in queryset:
+                if ord(query.title[0]) > 48 and ord(query.title[0]) < 57:
+                    not_nums_index += 1
+
+            try:
+                queryset.get(title__iexact='history')
+            except:
+                return queryset[not_nums_index:] + queryset[:not_nums_index]
+            else:
+                history = queryset.get(title__iexact='history')
+                queryset.exclude(id=history.id)
+                return [history] + queryset[not_nums_index:] + queryset[:not_nums_index]
         except:
-            return queryset[not_nums_index:] + queryset[:not_nums_index]
-        else:
-            history = queryset.get(title__iexact='history')
-            queryset.exclude(id=history.id)
-            return [history] + queryset[not_nums_index:] + queryset[:not_nums_index]
+            return queryset
 
 
 class History(models.Model):
