@@ -6,7 +6,7 @@ class HistoryManager(models.Manager):
         return super(HistoryManager, self).get_queryset().order_by('title')
 
     def sort(self):
-        queryset = super(HistoryManager, self).get_queryset().order_by('title')
+        queryset = self.get_queryset()
         not_nums_index = 0
 
         for query in queryset:
