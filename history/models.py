@@ -2,8 +2,6 @@ from django.db import models
 
 
 class HistoryManager(models.Manager):
-    def get_queryset(self):
-        return super(HistoryManager, self).get_queryset().order_by('title')
 
     def sort(self):
         queryset = self.get_queryset()
