@@ -35,4 +35,5 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Media files
 
+MEDIA_URL = '/sjcwebsite/media/'
 MEDIA_ROOT = BASE_DIR / 'sjcwebsite' / 'media'
