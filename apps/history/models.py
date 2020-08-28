@@ -15,11 +15,10 @@ class HistoryManager(models.Manager):
                     not_nums_index += 1
 
             try:
-                queryset.get(title__iexact='history')
+                history = queryset.get(title__iexact='history')
             except:
                 return queryset[not_nums_index:] + queryset[:not_nums_index]
             else:
-                history = queryset.get(title__iexact='history')
                 queryset.exclude(id=history.id)
                 return [history] + queryset[not_nums_index:] + queryset[:not_nums_index]
         except:
