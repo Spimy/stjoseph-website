@@ -2,8 +2,6 @@ from django.db import models
 from django.utils.text import slugify
 from django.contrib.auth import get_user_model
 
-User = get_user_model()
-
 
 class Articles(models.Model):
 
@@ -11,7 +9,7 @@ class Articles(models.Model):
     slug = models.SlugField(max_length=255, blank=True, null=True)
     title = models.CharField(max_length=255, null=False, blank=False)
     description = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     publish_date = models.DateField(auto_now_add=True)
     last_updated = models.DateField(auto_now=True)
 
