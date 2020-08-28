@@ -4,6 +4,12 @@ from .base import *
 DEBUG = False
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOST').split(' ')
 
+INSTALLED_APPS += [
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'cloudinary',
+]
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -20,3 +26,10 @@ MIDDLEWARE += [
 ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUD_KEY'),
+    'API_SECRET': os.getenv('CLOUD_SECRET')
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
