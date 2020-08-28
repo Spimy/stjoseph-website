@@ -32,3 +32,7 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.getenv('CLOUD_SECRET')
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# Media files
+
+MEDIA_ROOT = BASE_DIR / 'sjcwebsite' / 'media'
