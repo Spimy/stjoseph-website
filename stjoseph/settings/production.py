@@ -6,8 +6,7 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOST').split(' ')
 
 INSTALLED_APPS += [
     'cloudinary_storage',
-    'django.contrib.staticfiles',
-    'cloudinary',
+    'cloudinary'
 ]
 
 DATABASES = {
