@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'accounts/css/auth.css' %}">
+{% endblock styles %}
+
+{% block content %}
+
+<section id="authentication">
+
+    <form class="authentication-form" method="post">{% csrf_token %}
+
+        <h1>{{ heading }}</h1>
+
+        {% for field in form.visible_fields %}
+        <fieldset class="field">
+            <legend>{{ field.label_tag }}</legend>
+            {{ field }}
+        </fieldset>
+        {% endfor %}
+
+        {% if page_name == 'login' %}
+        <a class="forgot-pass" href="{% url 'accounts:register' %}">Forgot Password</a>
+        {% endif %}
+
+        <div class="actions">
+            <button class="translucent" type="submit">{{ button }}</button>
+            <p>or</p>
+
+            <div class="links">
+                {% if page_name == 'register' %}
+                <a href="{% url 'accounts:register' %}">Login Here</a>
+                {% else %}
+                <a href="{% url 'accounts:register' %}">Register Here</a>
+                {% endif %}
+            </div>
+
+        </div>
+
+    </form>
+
+</section>
+
+{% comment %} {% include 'message.html' with code='error' type='snackbar' %} {% endcomment %}
+
+{% endblock content %}

@@ -1,0 +1,74 @@
+#authentication {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#authentication .authentication-form {
+  border-radius: 0.5em;
+  padding: 2em;
+}
+
+#authentication .authentication-form h1 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+}
+
+#authentication .authentication-form h1 span {
+  padding-right: 1.5em;
+}
+
+#authentication .authentication-form .field {
+  border-radius: 0.25em;
+  border: 0.15em solid rgba(241, 241, 241, 0.5);
+  display: flex;
+  flex-direction: column;
+  margin: 2.5em 0;
+}
+
+#authentication .authentication-form .field:last-of-type {
+  margin-bottom: 0.5em;
+}
+
+#authentication .authentication-form .field legend {
+  padding: 0 0.5em;
+}
+
+#authentication .authentication-form .field input {
+  background-color: transparent;
+  font-size: 1em;
+  border-radius: 0.25em;
+  padding: 0.5em;
+  width: 100%;
+  margin: 0;
+}
+
+#authentication .authentication-form .field .error-msg {
+  padding: 1em 0.45em;
+}
+
+#authentication .authentication-form .forgot-pass {
+  margin-bottom: 1em;
+  display: block;
+  text-align: end;
+}
+
+#authentication .authentication-form .actions {
+  text-align: center;
+}
+
+#authentication .authentication-form .actions button {
+  font-size: 1em;
+  width: 100%;
+}
+
+#authentication .authentication-form .actions .links {
+  display: flex;
+  flex-direction: column;
+}
+
+#authentication .authentication-form .actions .links a {
+  margin: 0.25em;
+}
