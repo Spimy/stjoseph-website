@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.accounts',
     'apps.home',
     'apps.history',
     'apps.articles'
@@ -111,3 +112,5 @@ STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
     BASE_DIR / 'stjoseph' / 'static',
 ]
+
+AUTH_USER_MODEL = 'accounts.User'
