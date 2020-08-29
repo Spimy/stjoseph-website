@@ -18,7 +18,9 @@ class CustomUserAdmin(UserAdmin):
             request, form, formsets, change
         )
         if form.instance.roles.count() == 0:
-            form.instance.roles.add(Role.objects.get(id=Role.STUDENT))
+            form.instance.roles.add(
+                Role.objects.get_or_create(id=Role.STUDENT)
+            )
 
 
 admin.site.register(Role)
