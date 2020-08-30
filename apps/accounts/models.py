@@ -40,6 +40,7 @@ class EUserManager(UserManager):
 
 class User(AbstractUser):
 
+    email = models.EmailField(unique=True)
     avatar = models.ImageField(upload_to='users/avatars', blank=True)
     roles = models.ManyToManyField(Role, related_name='users', blank=True)
     objects = EUserManager()
