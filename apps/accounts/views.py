@@ -1,10 +1,9 @@
-from django.views.generic.base import RedirectView
-from django.views.generic.edit import CreateView, FormView
+from django.views.generic import CreateView, FormView, RedirectView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls.base import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth import login, logout
-from django.views.generic import CreateView
+from .mixins import SuccessUrlMixin
 from .forms import RegistrationForm, LoginForm
 
 
@@ -27,11 +26,10 @@ class RegistrationView(CreateView):
         return super(RegistrationView, self).form_invalid(form)
 
 
-class LoginView(FormView):
+class LoginView(SuccessUrlMixin, FormView):
 
     form_class = LoginForm
     template_name = 'accounts/login.html'
-    success_url = reverse_lazy('home:homepage')
 
     def form_valid(self, form: LoginForm):
         login(self.request, form.get_user())
@@ -49,6 +47,7 @@ class LoginView(FormView):
 class LogoutView(LoginRequiredMixin, RedirectView):
 
     url = reverse_lazy('home:homepage')
+    redirect_field_name = None
 
     def get(self, request, *args, **kwargs):
         logout(request)
