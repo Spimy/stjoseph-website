@@ -92,7 +92,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.1/topics/auth/customizing/
 
 AUTHENTICATION_BACKENDS = [
-    'apps.accounts.backends.authentication.EmailOrUsernameBackend'
+    'apps.accounts.backends.EmailOrUsernameBackend'
 ]
 
 
@@ -121,3 +121,7 @@ STATICFILES_DIRS = [
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
+
+
+LOGIN_URL = 'accounts:login'
+SUCCESS_LOGIN_URL = 'home:homepage'
