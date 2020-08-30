@@ -11,7 +11,7 @@ class EmailOrUsernameBackend(ModelBackend):
             username = kwargs.get(user_model.USERNAME_FIELD)
 
         try:
-            user = user_model.objects.get(username__exact=username)
+            user = user_model.objects.get(username__iexact=username)
         except user_model.DoesNotExist:
             try:
                 user = user_model.objects.get(email__iexact=username)
