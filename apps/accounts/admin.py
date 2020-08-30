@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import Role
 from django.contrib.auth import get_user_model
+from .models import Role
 
 ADDITIONAL_USER_FIELDS = (
     ('Profile', {'fields': ('avatar', 'roles')}),
@@ -17,6 +17,7 @@ class CustomUserAdmin(UserAdmin):
         super(CustomUserAdmin, self).save_related(
             request, form, formsets, change
         )
+
         if form.instance.roles.count() == 0:
             form.instance.roles.add(
                 Role.objects.get_or_create(id=Role.STUDENT)

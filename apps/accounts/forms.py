@@ -1,6 +1,6 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 
 class RegistrationForm(UserCreationForm):
@@ -38,8 +38,7 @@ class RegistrationForm(UserCreationForm):
     )
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
+        super(RegistrationForm, self).__init__(*args, **kwargs)
         self.label_suffix = ''
 
         for field_name in ['username', 'email', 'password1', 'password2']:
