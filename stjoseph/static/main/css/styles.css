@@ -24,6 +24,18 @@ a:hover {
     text-decoration: none;
 }
 
+input {
+    font-family: "Font Awesome 5 Free", "Titillium Web", sans-serif;
+    color: #272727;
+    border: none;
+}
+
+input::placeholder {
+    font-weight: 900;
+    color: currentColor;
+    opacity: 0.75;
+}
+
 .container {
     margin: 0 10vw;
 }
