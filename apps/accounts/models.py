@@ -35,7 +35,7 @@ class User(AbstractUser):
     def save(self, *args, **kwargs):
         super(User, self).save(*args, **kwargs)
         if self.roles.count() == 0:
-            self.roles.add(Role.objects.get_or_create(id=Role.STUDENT))
+            self.roles.add(Role.objects.get_or_create(id=Role.STUDENT)[0])
             super(User, self).save(*args, **kwargs)
 
     def __str__(self):

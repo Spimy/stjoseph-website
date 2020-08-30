@@ -20,7 +20,7 @@ class CustomUserAdmin(UserAdmin):
 
         if form.instance.roles.count() == 0:
             form.instance.roles.add(
-                Role.objects.get_or_create(id=Role.STUDENT)
+                Role.objects.get_or_create(id=Role.STUDENT)[0]
             )
 
 
